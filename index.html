@@ -1,25 +1,287 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Het eerste begin!</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleSite</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        Hier komt mijn eerste tekst!
+    body {
+      background-color: #ffffff;
+      color: #1e293b;
+      line-height: 1.6;
+    }
 
-        <button>Yoo klik hier bro</button>
+    /* Navigation */
+    header {
+      background-color: #eaf3fd;
+      padding: 24px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        <button onclick="alert('je hebt op de knop geklikt!')">Klik mij!</button>
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1e293b;
+      text-decoration: none;
+    }
 
-        <img src="https://media.tenor.com/xGZFLuo2yroAAAAe/yooo.png" alt="Yooo GIF">
+    .logo span {
+      color: #2563eb;
+    }
 
-    </body>
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+      font-size: 15px;
+      padding-bottom: 4px;
+    }
+
+    nav a.active {
+      color: #2563eb;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #eaf3fd;
+      padding: 40px 10% 80px 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 480px;
+    }
+
+    .hero-text h1 {
+      font-size: 44px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #475569;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .hero-graphic {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      max-width: 450px;
+    }
+
+    .hero-graphic svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .features-subtitle {
+      color: #64748b;
+      font-size: 15px;
+      margin-bottom: 60px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .icon-box {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .icon-blue {
+      background-color: #dbeafe;
+      color: #1e293b;
+    }
+
+    .icon-green {
+      background-color: #d1fae5;
+      color: #1e293b;
+    }
+
+    .icon-purple {
+      background-color: #ede9fe;
+      color: #1e293b;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #64748b;
+      max-width: 260px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #eaf3fd;
+      text-align: center;
+      padding: 24px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 850px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Simple<span>Site</span></a>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">Over mij</a>
+      <a href="#">Diensten</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welkom op mijn website!</h1>
+      <p>Dit is een simpele website die ik zelf heb gemaakt. Hier kun je wat meer over mij en wat ik doe vinden.</p>
+      <a href="#" class="btn">Meer weten &rarr;</a>
+    </div>
+    
+    <div class="hero-graphic">
+      <svg viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="280" cy="70" r="30" fill="#bcd7ff" />
+        <path d="M80 85 C80 75, 95 65, 110 75 C120 65, 140 70, 140 85 C150 85, 155 100, 140 105 L80 105 Z" fill="#ffffff" />
+        <path d="M310 90 C310 80, 325 70, 340 80 C350 70, 370 75, 370 90 C380 90, 385 105, 370 110 L310 110 Z" fill="#ffffff" />
+        <polygon points="260,210 335,135 410,210" fill="#88afed" />
+        <polygon points="120,210 240,90 360,210" fill="#6c9ae4" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Wat ik doe</h2>
+    <p class="features-subtitle">Hier zijn een paar dingen die ik leuk vind en waar ik mee bezig ben.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="icon-box icon-blue">&lt;/&gt;</div>
+        <h3>Webdesign</h3>
+        <p>Ik vind het leuk om websites te maken en te ontwerpen.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-box icon-green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="12" rx="2" ry="2"></rect>
+            <line x1="2" y1="20" x2="22" y2="20"></line>
+          </svg>
+        </div>
+        <h3>Leren</h3>
+        <p>Ik ben altijd bezig om nieuwe dingen te leren.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-box icon-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h3>Hobby's</h3>
+        <p>Ik speel graag games, sport en ik ben vaak met vrienden.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 SimpleSite. Alle rechten voorbehouden.
+  </footer>
+
+</body>
 </html>
-
-<input type="text" placeholder="Typ hier...">
-
-<body style="background-color: aqua;"
-
-
-<h1>dit is een gewone titel </h1>
