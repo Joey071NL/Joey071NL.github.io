@@ -1,14 +1,54 @@
-<!DOCTYPE html> <!--dit is de homepage van mijn site-->
-<html> <!--dit is het html-element-->
-<head>
-<title>Het eerste begin</title>
-<meta charset="utf-8">
-</head>
-<body>
+<!DOCTYPE html> <!-- dit is de homepage van mijn site -->
+<html lang="nl"> <!-- hier begint de pagina -->
+  <head>
+    <title>Mijn website</title>
+    <meta charset="utf-8">
+    <!-- hier koppel ik het css-bestand aan deze pagina -->
+    <link rel="stylesheet" type="text/css" href="opmaak.css">
+  </head>
+  <body>
 
-Hier komt mijn eerste tekst
+    <!-- bovenste deel: links het menu en de tekst, rechts de foto -->
+    <div class="boven">
 
-<a href="binairstelsel.html">Uitleg binair stelsel</a>
+      <div class="links">
+        <!-- het menu, dit staat op elke pagina hetzelfde -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="binairstelsel.html">Binair stelsel</a></li>
+          <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+        </ul>
 
-</body>
+        <h1>Welkom</h1>
+        <p>Dit is mijn eerste website. Kijk gerust even rond.</p>
+      </div>
+
+      <div class="foto">
+        <img src="foto.jpg" alt="Hier komt nog een foto">
+      </div>
+
+    </div>
+
+    <!-- onderste deel: wat ik doe -->
+    <div class="wat">
+      <h2>Wat ik doe</h2>
+      <p>Hier zijn een paar dingen die ik leuk vind</p>
+
+      <!-- twee kolommen naast elkaar -->
+      <div class="kolommen">
+
+        <div class="kolom1">
+          <h3>Informatica</h3>
+          <p>Ook al heb ik informatica pas een week, ik vind het nu al mijn favoriete vak. Ik snap niks van dit, maar ik vind het leuk om hiermee bezig te zijn.</p>
+        </div>
+
+        <div class="kolom2">
+          <h3>Gamen</h3>
+          <p>Ik vind het erg leuk om met vrienden te gamen, vooral GTA 5 momenteel.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
 </html>
