@@ -3,38 +3,43 @@
   <head>
     <title>Mijn website</title>
     <meta charset="utf-8">
+    <!-- zodat de pagina ook op een telefoon goed past -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- hier koppel ik het css-bestand aan deze pagina -->
     <link rel="stylesheet" type="text/css" href="opmaak.css">
   </head>
   <body>
 
-    <!-- bovenste deel: links het menu en de tekst, rechts de foto -->
+    <!-- bovenste deel: links het menu en de tekst, rechts de afbeelding -->
     <div class="boven">
 
       <div class="links">
         <!-- het menu, dit staat op elke pagina hetzelfde -->
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a class="actief" href="index.html">Home</a></li>
           <li><a href="binairstelsel.html">Binair stelsel</a></li>
           <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
         </ul>
 
         <h1>Welkom</h1>
         <p>Dit is mijn eerste website. Kijk gerust even rond.</p>
+
+        <!-- deze link springt naar het stuk hieronder met id="wat" -->
+        <a class="knop" href="#wat">Bekijk wat ik doe</a>
       </div>
 
       <div class="foto">
-        <img src="foto.jpg" alt="Hier komt nog een foto">
+        <img src="foto.svg" alt="Blauwe afbeelding met cirkels">
       </div>
 
     </div>
 
     <!-- onderste deel: wat ik doe -->
-    <div class="wat">
+    <div class="wat" id="wat">
       <h2>Wat ik doe</h2>
       <p>Hier zijn een paar dingen die ik leuk vind</p>
 
-      <!-- twee kolommen naast elkaar -->
+      <!-- twee kaarten naast elkaar -->
       <div class="kolommen">
 
         <div class="kolom1">
@@ -49,6 +54,8 @@
 
       </div>
     </div>
+
+    <footer>Mijn eerste website</footer>
 
   </body>
 </html>
