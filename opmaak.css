@@ -131,6 +131,36 @@ footer {
   font-size: 14px;
 }
 
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #2a3a5c;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+th {
+  background-color: #182340;
+  color: #4d9fff;
+}
+
+td {
+  color: #b8c4dc;
+}
+
+.kleurenfoto {
+  margin-top: 30px;
+  max-width: 480px;
+}
+
+.kleurenfoto img {
+  width: 100%;
+  border-radius: 15px;
+}
+
 @media (max-width: 700px) {
   .boven, .kolommen {
     display: block;
