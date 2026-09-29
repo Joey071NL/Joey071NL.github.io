@@ -10,20 +10,19 @@
   </head>
   <body>
 
-    <!-- dezelfde opbouw als de homepage: links tekst, rechts afbeelding -->
+    <!-- dezelfde opbouw als de homepage: links tekst, rechts foto -->
     <div class="boven">
 
       <div class="links">
-        <!-- hamburgermenu: klik op het icoon om de lijst open of dicht te klappen -->
-        <div class="menubalk">
-          <input type="checkbox" id="menu-toggle" class="menu-toggle">
-          <label for="menu-toggle" class="hamburger">☰</label>
+        <!-- hamburgermenu: details/summary is een ingebouwd html-element, klik op summary om open of dicht te klappen -->
+        <details class="menubalk">
+          <summary>☰</summary>
           <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a class="actief" href="binairstelsel.html">Binair stelsel</a></li>
             <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
           </ul>
-        </div>
+        </details>
 
         <h1>Binair stelsel</h1>
         <p>Een computer rekent met maar twee cijfers: 0 en 1. Elke plek in het getal heeft een eigen waarde.</p>
@@ -54,8 +53,9 @@
         <p>8 + 4 + 1 = 13, dus 00001101 is het getal 13.</p>
       </div>
 
+      <!-- zelfde foto als op de homepage -->
       <div class="foto">
-        <img src="foto.svg" alt="Chip met AI, een boek en een diploma">
+        <img src="foto.jpg" alt="Mijn eigen foto">
       </div>
 
     </div>
