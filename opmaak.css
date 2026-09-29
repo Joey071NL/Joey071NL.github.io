@@ -79,6 +79,11 @@ a {
   box-sizing: border-box;
 }
 
+.boven-zonder-foto .links {
+  width: 100%;
+  max-width: 700px;
+}
+
 h1 {
   font-size: 64px;
   margin: 10px 0 10px 0;
