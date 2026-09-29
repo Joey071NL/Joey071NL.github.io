@@ -14,18 +14,22 @@
     <div class="boven">
 
       <div class="links">
-        <!-- het menu, dit staat op elke pagina hetzelfde -->
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="binairstelsel.html">Binair stelsel</a></li>
-          <li><a class="actief" href="kleurmodellen.html">Kleurmodellen</a></li>
-        </ul>
+        <!-- hamburgermenu: klik op het icoon om de lijst open of dicht te klappen -->
+        <div class="menubalk">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle">
+          <label for="menu-toggle" class="hamburger">☰</label>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="binairstelsel.html">Binair stelsel</a></li>
+            <li><a class="actief" href="kleurmodellen.html">Kleurmodellen</a></li>
+          </ul>
+        </div>
 
         <h1>Kleurmodellen</h1>
         <p>Een kleurmodel maakt kleuren met een paar basiskleuren. Beeldschermen gebruiken rood, groen en blauw licht, dat heet RGB.</p>
 
         <div class="kleurenfoto">
-          <img src="kleuren.svg" alt="Rode, groene en blauwe cirkels die elkaar overlappen">
+          <img src="kleuren.svg" alt="Cyaan, magenta en gele cirkels die elkaar overlappen">
         </div>
 
         <p>Printers gebruiken juist inkt: cyaan, magenta, geel en zwart, dat heet CMYK.</p>
