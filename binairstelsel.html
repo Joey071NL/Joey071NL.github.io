@@ -14,12 +14,16 @@
     <div class="boven">
 
       <div class="links">
-        <!-- het menu, dit staat op elke pagina hetzelfde -->
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="actief" href="binairstelsel.html">Binair stelsel</a></li>
-          <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
-        </ul>
+        <!-- hamburgermenu: klik op het icoon om de lijst open of dicht te klappen -->
+        <div class="menubalk">
+          <input type="checkbox" id="menu-toggle" class="menu-toggle">
+          <label for="menu-toggle" class="hamburger">☰</label>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="actief" href="binairstelsel.html">Binair stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+          </ul>
+        </div>
 
         <h1>Binair stelsel</h1>
         <p>Een computer rekent met maar twee cijfers: 0 en 1. Elke plek in het getal heeft een eigen waarde.</p>
