@@ -1,147 +1,182 @@
+/* ===== ALGEMEEN: dingen die voor de hele site gelden ===== */
+
+/* body = de hele pagina. Donkerblauwe achtergrond, witte tekst, klaar */
 body {
-  margin: 0;
-  background-color: #0a0e1a;
-  color: white;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  margin: 0;                      /* geen rand om de pagina heen */
+  background-color: #0a0e1a;      /* donkerblauw, lijkt me gewoon cool */
+  color: white;                   /* tekstkleur, want donker + zwarte tekst = niks zien */
+  font-family: Arial, sans-serif; /* lettertype, Arial is saai maar werkt altijd */
+  line-height: 1.6;               /* ruimte tussen de regels, anders lijkt het een brij */
 }
 
+/* alle paragrafen (p) iets grijsblauw ipv wit, ziet er rustiger uit */
 p {
   color: #b8c4dc;
 }
 
+/* alle links blauw, anders zijn ze paars/lelijk */
 a {
   color: #4d9fff;
 }
 
+
+/* ===== MENU (het hamburgerding bovenin) ===== */
+
+/* de doos om het hele menu heen */
 .menubalk {
-  position: relative;
-  margin-bottom: 50px;
+  position: relative;   /* nodig zodat het uitklapmenu eronder blijft hangen */
+  margin-bottom: 50px;  /* ruimte onder het knopje zodat het niet tegen de titel plakt */
 }
 
+/* het knopje met die 3 streepjes ☰ */
 .menubalk summary {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 28px;
+  cursor: pointer;               /* handje als je er met je muis op staat */
+  display: inline-block;         /* knopje is zo breed als nodig, niet de hele regel */
+  font-size: 28px;               /* groot genoeg om op te klikken */
   line-height: 1;
-  padding: 8px 14px;
-  border: 2px solid #4d9fff;
-  border-radius: 8px;
-  list-style: none;
+  padding: 8px 14px;             /* ruimte binnen het knopje */
+  border: 2px solid #4d9fff;     /* blauw randje */
+  border-radius: 8px;            /* afgeronde hoekjes */
+  list-style: none;              /* haalt het standaard pijltje weg */
 }
 
+/* het standaard pijltje weghalen voor Chrome en dat soort browsers */
 .menubalk summary::-webkit-details-marker {
   display: none;
 }
 
+/* als het menu open is wordt het knopje felblauw */
 .menubalk[open] summary {
   background-color: #1e4fd8;
 }
 
+/* de lijst met links die uitklapt */
 .menu {
-  position: absolute;
-  top: 55px;
-  left: 0;
+  position: absolute;            /* zweeft los over de rest heen */
+  top: 55px;                     /* 55px van boven = net onder het knopje */
+  left: 0;                       /* helemaal links */
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style-type: none;         /* geen bolletjes voor de lijst */
   background-color: #121a2e;
   border: 2px solid #4d9fff;
   border-radius: 8px;
-  overflow: hidden;
-  min-width: 190px;
-  z-index: 10;
+  overflow: hidden;              /* zodat de hoekjes mooi rond blijven */
+  min-width: 190px;              /* minimaal zo breed, anders wordt het smal */
+  z-index: 10;                   /* ligt boven de andere dingen, anders verdwijnt het eronder */
 }
 
+/* elke link in het menu */
 .menu li a {
-  display: block;
+  display: block;                /* hele balk is klikbaar, niet alleen de tekst */
   color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  transition: background-color 0.15s ease;
+  padding: 14px 20px;            /* eerst boven/onder, dan links/rechts */
+  text-decoration: none;         /* geen streepje onder de link */
+  transition: background-color 0.15s ease; /* kleur verandert soepel ipv ineens */
 }
 
+/* als je er met je muis overheen gaat (hover) wordt het blauw */
 .menu li a:hover {
   background-color: #1e4fd8;
 }
 
+/* de pagina waar je nu op zit is altijd blauw */
 .menu li a.actief {
   background-color: #1e4fd8;
 }
 
+
+/* ===== BOVENSTE DEEL: tekst links, foto rechts ===== */
+
+/* flex = dingen naast elkaar zetten ipv onder elkaar */
 .boven {
   display: flex;
 }
 
+/* de tekstkant, 50% van de breedte */
 .links {
   width: 50%;
-  padding: 20px 40px;
-  box-sizing: border-box;
+  padding: 20px 40px;            /* ruimte binnenin zodat de tekst niet tegen de rand zit */
+  box-sizing: border-box;        /* padding telt mee in de 50%, anders past het niet */
 }
 
+/* als er geen foto is mag de tekst de hele breedte (tot 700px) */
 .boven-zonder-foto .links {
   width: 100%;
   max-width: 700px;
 }
 
+/* de grote titel */
 h1 {
-  font-size: 64px;
-  margin: 10px 0 10px 0;
+  font-size: 64px;               /* groot, het is de titel */
+  margin: 10px 0 10px 0;         /* boven, rechts, onder, links */
 }
 
+/* paragrafen in de tekstkant: iets groter en niet te breed */
 .links p {
   font-size: 20px;
-  max-width: 420px;
+  max-width: 420px;              /* anders worden de regels te lang om te lezen */
 }
 
+/* de knop ("Bekijk wat ik doe") */
 .knop {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 28px;
   background-color: #1e4fd8;
   color: white;
-  text-decoration: none;
-  border-radius: 30px;
+  text-decoration: none;         /* geen streepje onder de tekst */
+  border-radius: 30px;           /* heel rond, dan lijkt het een echte knop */
   transition: background-color 0.15s ease;
 }
 
+/* knop wordt lichter als je er overheen gaat */
 .knop:hover {
   background-color: #4d9fff;
 }
 
+/* de fotokant, de andere 50% */
 .foto {
   width: 50%;
 }
 
+/* de foto zelf */
 .foto img {
-  display: block;
-  width: 100%;
+  display: block;                /* haalt een vervelend gaatje onder de foto weg */
+  width: 100%;                   /* foto vult het hele vak */
   height: 100%;
-  object-fit: cover;
-  border-bottom-left-radius: 200px;
+  object-fit: cover;             /* foto wordt bijgesneden zodat hij past, niet uitgerekt */
+  border-bottom-left-radius: 200px; /* grote ronde hoek linksonder, voor de looks */
 }
 
-/* alleen voor de pagina over het binaire stelsel: toon de hele afbeelding zonder bij te snijden */
+/* alleen voor de binaire stelsel pagina: hele afbeelding laten zien, niks afsnijden */
 .foto-binair img {
   object-fit: contain;
 }
 
+
+/* ===== "WAT IK DOE" GEDEELTE ===== */
+
+/* het lichtere vak onder de bovenkant */
 .wat {
   background-color: #121a2e;
-  padding: 60px 40px;
+  padding: 60px 40px;            /* veel ruimte, dan ziet het er minder volgepropt uit */
 }
 
+/* kopjes van niveau 2 */
 h2 {
   font-size: 36px;
   margin: 0 0 5px 0;
 }
 
+/* de twee vakken naast elkaar (Informatica en Gamen) */
 .kolommen {
-  display: flex;
-  gap: 30px;
+  display: flex;                 /* naast elkaar */
+  gap: 30px;                     /* ruimte tussen de vakken */
   margin-top: 35px;
 }
 
+/* eerste vak is 2x zo breed als het tweede (2 tegen 1) */
 .kolom1 {
   flex: 2;
 }
@@ -150,75 +185,101 @@ h2 {
   flex: 1;
 }
 
+/* opmaak die voor allebei de vakken hetzelfde is, daarom 1 keer opgeschreven met een komma */
 .kolom1, .kolom2 {
   background-color: #182340;
   padding: 25px 30px;
   border-radius: 15px;
-  border-top: 4px solid #4d9fff;
+  border-top: 4px solid #4d9fff; /* blauw streepje bovenaan, ziet er netjes uit */
   transition: transform 0.15s ease;
 }
 
+/* vakje springt een beetje omhoog als je erop gaat staan */
 .kolom1:hover, .kolom2:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px);   /* 4px omhoog (min = omhoog, vreemd maar waar) */
 }
 
+/* kopjes van niveau 3 in de vakken */
 h3 {
   color: #4d9fff;
-  margin-top: 0;
+  margin-top: 0;                 /* anders zit er te veel ruimte boven */
 }
 
+
+/* ===== ONDERKANT ===== */
+
+/* het stukje helemaal onderaan de pagina */
 footer {
   padding: 25px 40px;
-  color: #7f8fae;
+  color: #7f8fae;                /* grijs, mag niet te veel opvallen */
   font-size: 14px;
 }
 
+
+/* ===== TABEL (binair stelsel pagina) ===== */
+
 table {
-  border-collapse: collapse;
+  border-collapse: collapse;     /* randjes van de vakjes plakken aan elkaar ipv dubbele lijnen */
   margin-top: 20px;
 }
 
+/* th = kop van een kolom, td = gewoon vakje. Allebei krijgen dit */
 th, td {
-  border: 1px solid #2a3a5c;
+  border: 1px solid #2a3a5c;     /* dun randje om elk vakje */
   padding: 10px 16px;
-  text-align: center;
+  text-align: center;            /* getallen in het midden */
 }
 
+/* de bovenste rij (128, 64, 32...) iets anders van kleur */
 th {
   background-color: #182340;
   color: #4d9fff;
 }
 
+/* de vakjes eronder (0 en 1) */
 td {
   color: #b8c4dc;
 }
 
+
+/* ===== AFBEELDING OP DE KLEURMODELLEN PAGINA ===== */
+
 .kleurenfoto {
   margin-top: 30px;
-  max-width: 480px;
+  max-width: 480px;              /* niet te groot */
 }
 
 .kleurenfoto img {
-  width: 100%;
-  border-radius: 15px;
+  width: 100%;                   /* past zich aan aan het vak waar hij in zit */
+  border-radius: 15px;           /* afgeronde hoekjes */
 }
 
+
+/* ===== TELEFOON ===== */
+
+/* alles hieronder werkt alleen als het scherm 700px of smaller is (dus telefoon) */
 @media (max-width: 700px) {
+  /* niks meer naast elkaar, alles gewoon onder elkaar */
   .boven, .kolommen {
     display: block;
   }
+  /* tekst en foto nemen de hele breedte */
   .links, .foto {
     width: 100%;
   }
+  /* foto niet te hoog op een telefoon */
   .foto img {
     height: 250px;
   }
+  /* titel kleiner, anders past hij niet */
   h1 {
     font-size: 44px;
   }
+  /* de ronde hoek van de foto ook kleiner */
   .foto img {
     border-bottom-left-radius: 80px;
   }
+  /* beetje ruimte tussen de vakken die nu onder elkaar staan */
   .kolom1, .kolom2 {
     margin-bottom: 20px;
   }
