@@ -121,6 +121,11 @@ h1 {
   border-bottom-left-radius: 200px;
 }
 
+/* alleen voor de pagina over het binaire stelsel: toon de hele afbeelding zonder bij te snijden */
+.foto-binair img {
+  object-fit: contain;
+}
+
 .wat {
   background-color: #121a2e;
   padding: 60px 40px;

@@ -10,9 +10,10 @@
   </head>
   <body>
 
-    <!-- deze pagina heeft geen foto rechts, daarom de klasse boven-zonder-foto -->
-    <div class="boven boven-zonder-foto">
+    <!-- bovenste deel van de pagina: links de tekst, rechts de afbeelding (net als op de homepage) -->
+    <div class="boven">
 
+      <!-- linkerkant: menu, titel, uitleg en tabel -->
       <div class="links">
         <!-- hamburgermenu: details/summary is een ingebouwd html-element, klik op summary om open of dicht te klappen -->
         <details class="menubalk">
@@ -51,10 +52,13 @@
         </table>
 
         <p>8 + 4 + 1 = 13, dus 00001101 is het getal 13.</p>
+      </div>
 
-        <!-- afbeelding bij de uitleg: src is de bestandsnaam in mijn repository, alt is de tekst als de afbeelding niet laadt -->
-        <!-- width maakt de afbeelding 400 pixels breed, max-width zorgt dat hij op een telefoon niet te breed wordt -->
-        <img src="binear.png" alt="Uitleg over het binaire stelsel" width="400" style="max-width: 100%; height: auto;">
+      <!-- rechterkant: de afbeelding, de klasse foto geeft de opmaak uit opmaak.css -->
+      <!-- foto-binair zorgt dat de hele afbeelding zichtbaar blijft (niet bijgesneden), alleen op deze pagina -->
+      <!-- src is de bestandsnaam in mijn repository, alt is de tekst als de afbeelding niet laadt -->
+      <div class="foto foto-binair">
+        <img src="binear.png" alt="Uitleg over het binaire stelsel">
       </div>
 
     </div>
