@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- dit is een HTML5-pagina -->
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- zorgt dat de site goed past op een telefoon -->
+  <title>Compressie</title> <!-- titel die in het tabblad staat -->
+  <link rel="stylesheet" type="text/css" href="opmaak.css"> <!-- koppelt de opmaak (CSS) aan deze pagina -->
+</head>
+<body>
+  <!-- MENU: knop voor op de telefoon; klikken laat het menu zien of verdwijnen -->
+  <div class="hamburger" onclick="document.getElementById('menu').classList.toggle('open')">☰</div>
+  <!-- MENU: een lijst (ul) met links (a). Dit blok staat op elke pagina -->
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="binairstelsel.html">Binair stelsel</a></li>
+    <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+    <li><a href="compressie.html">Compressie</a></li>
+    <li><a href="ai.html">AI</a></li>
+  </ul>
+  <div class="inhoud">
+    <h1>Compressie</h1>
+    <p>Compressie betekent dat je een bestand kleiner maakt, zodat het minder opslagruimte kost en sneller te versturen is.</p>
+    <h2>De video</h2>
+    <!-- De afbeelding is de "knop": klik je erop, dan opent de video. Link naar de video How Computers Work. -->
+    <a href="https://www.youtube.com/watch?v=mCq8-xTH7jA" target="_blank"><img src="compressie.svg" alt="Klik om de video over compressie te bekijken" width="320"></a>
+    <p><small>Klik op de afbeelding om de video How Computers Work te bekijken.</small></p>
+    <h2>Mijn samenvatting</h2>
+    <p>Er zijn twee soorten compressie. Bij <b>verliesloze</b> compressie (zoals zip en png) gaat er niets verloren en krijg je het originele bestand terug. Bij compressie <b>met verlies</b> (zoals jpg voor foto's, mp3 voor muziek en mp4 voor video) gooit de computer details weg die je bijna niet merkt. Die bestanden worden veel kleiner, maar een deel van de kwaliteit is voorgoed weg.</p>
+  </div>
+  <div class="voet">Mijn eerste website</div> <!-- voetregel, op elke pagina hetzelfde -->
+</body>
+</html>
