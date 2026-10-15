@@ -10,8 +10,8 @@
   </head>
   <body>
 
-    <!-- bovenste deel van de pagina: links de tekst, rechts de afbeelding (net als op de homepage) -->
-    <div class="boven">
+    <!-- bovenste deel van de pagina: links de tekst, rechts de afbeelding (zonder foto, die was te groot) -->
+    <div class="boven boven-zonder-foto">
 
       <!-- linkerkant: menu, titel, uitleg en tabel -->
       <div class="links">
@@ -56,18 +56,11 @@
         <p>8 + 4 + 1 = 13, dus 00001101 is het getal 13.</p>
       </div>
 
-      <!-- rechterkant: de afbeelding, de klasse foto geeft de opmaak uit opmaak.css -->
-      <!-- foto-binair zorgt dat de hele afbeelding zichtbaar blijft (niet bijgesneden), alleen op deze pagina -->
-      <!-- src is de bestandsnaam in mijn repository, alt is de tekst als de afbeelding niet laadt -->
-      <div class="foto foto-binair">
-        <img src="binear.png" alt="Uitleg over het binaire stelsel">
-      </div>
-
     </div>
 
-    <!-- onderste deel: bits en bytes, zelf proberen en het spel -->
+    <!-- onderste deel: bits en bytes, invoer-verwerking-uitvoer en het spel -->
     <div class="wat">
-      <h2>Bits en bytes</h2>
+      <h2>Meer over binair</h2>
       <p>Op een harde schijf staan miljoenen magneetjes die aan of uit staan.</p>
 
       <div class="kolommen">
@@ -77,37 +70,28 @@
           <p>1 bit is 1 magneetje: aan (1) of uit (0). 8 bits samen zijn 1 byte. Met 8 bits kun je 2<sup>8</sup> = 256 verschillende waardes opslaan. Binaire getallen schrijf je altijd in groepjes van 4, dus 0000 1101.</p>
         </div>
 
-        <!-- INVOER - VERWERKING - UITVOER: ik typ een getal, de computer rekent het om, het antwoord komt eronder -->
+        <!-- invoer - verwerking - uitvoer: wat een computer doet met al die enen en nullen -->
         <div class="kolom2">
-          <h3>Probeer het zelf</h3>
-          <!-- INVOER: een getal van 0 t/m 255 -->
-          <input type="number" id="getal" min="0" max="255" value="13">
-          <button class="knop" onclick="naarBinair()">Omzetten</button>
-          <!-- UITVOER: hier komt het antwoord -->
-          <p class="uitvoer" id="antwoord">0000 1101</p>
+          <h3>Invoer, verwerking, uitvoer</h3>
+          <p><b>Invoer:</b> informatie gaat de computer in, bijvoorbeeld via het toetsenbord.<br>
+          <b>Verwerking:</b> de processor rekent ermee, met enen en nullen.<br>
+          <b>Uitvoer:</b> het resultaat komt eruit, bijvoorbeeld op het beeldscherm.<br>
+          Tussendoor slaat de computer alles op in het geheugen.</p>
         </div>
 
       </div>
 
       <h2>Binary Bonanza</h2>
       <p>Ik heb een paar levels van dit spel gespeeld om binair te oefenen. Speel zelf mee:</p>
-      <!-- iframe = een andere pagina (het spel) die in mijn pagina getoond wordt -->
-      <iframe class="spel" src="https://games.penjee.com/binary-bonanza/game.php" title="Binary Bonanza"></iframe>
-    </div>
 
-    <script>
-      // VERWERKING: zet het ingevoerde getal om naar binair
-      function naarBinair() {
-        var n = parseInt(document.getElementById("getal").value);   // haal het getal uit het vakje
-        var uit = document.getElementById("antwoord");
-        if (isNaN(n) || n < 0 || n > 255) {                         // controle: moet tussen 0 en 255 zijn
-          uit.innerText = "Kies 0 t/m 255";
-          return;
-        }
-        var bits = n.toString(2).padStart(8, "0");                  // binair, aangevuld tot 8 bits
-        uit.innerText = bits.slice(0, 4) + " " + bits.slice(4);     // groepjes van 4
-      }
-    </script>
+      <div class="kolommen">
+        <!-- spelkaart: zelfde vak als de andere, maar springt niet omhoog -->
+        <div class="kolom1 spelkaart">
+          <!-- iframe = een andere pagina (het spel) die in mijn pagina getoond wordt -->
+          <iframe class="spel" src="https://games.penjee.com/binary-bonanza/game.php" title="Binary Bonanza"></iframe>
+        </div>
+      </div>
+    </div>
 
     <footer>Mijn eerste website</footer>
 
