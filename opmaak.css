@@ -1,88 +1,350 @@
-/* opmaak.css - de opmaak voor ALLE pagina's van mijn website (1 bestand voor alles) */
+/* ===== ALGEMEEN: dingen die voor de hele site gelden ===== */
 
-/* body: lettertype en kleur van de tekst op de hele pagina */
+/* body = de hele pagina. Donkerblauwe achtergrond, witte tekst, klaar */
 body {
-  font-family: Arial, sans-serif;
-  color: #222;              /* tekstkleur: bijna zwart */
-  background-color: #f4f4f4; /* achtergrondkleur van de pagina */
-  margin: 0;
+  margin: 0;                      /* geen rand om de pagina heen */
+  background-color: #0a0e1a;      /* donkerblauw, lijkt me gewoon cool */
+  color: white;                   /* tekstkleur, want donker + zwarte tekst = niks zien */
+  font-family: Arial, sans-serif; /* lettertype, Arial is saai maar werkt altijd */
+  line-height: 1.6;               /* ruimte tussen de regels, anders lijkt het een brij */
 }
 
-/* MENU: de lijst (ul) wordt een horizontale balk */
-ul.menu {
-  list-style-type: none;   /* geen bolletjes */
-  margin: 0;               /* geen marge */
-  padding: 0;              /* geen padding */
-  overflow: hidden;
-  background-color: #333;  /* donkergrijze balk */
+/* alle paragrafen (p) iets grijsblauw ipv wit, ziet er rustiger uit */
+p {
+  color: #b8c4dc;
 }
-/* elk menu-item staat naast elkaar (float: left) */
-ul.menu li { float: left; }
-/* de links in het menu: wit, blokvormig zodat de hele knop klikbaar is */
-ul.menu li a {
-  display: block;
-  color: white;            /* tekstkleur van de links */
-  text-align: center;
-  padding: 14px 16px;      /* 14px boven/onder, 16px links/rechts */
-  text-decoration: none;   /* geen streepje onder de link */
-}
-/* hover: als de muis over de link gaat wordt hij zwart */
-ul.menu li a:hover { background-color: #111; }
 
-/* hamburger-knop (☰): alleen zichtbaar op een smal scherm (telefoon) */
-.hamburger {
+/* alle links blauw, anders zijn ze paars/lelijk */
+a {
+  color: #4d9fff;
+}
+
+
+/* ===== MENU (het hamburgerding bovenin) ===== */
+
+/* de doos om het hele menu heen */
+.menubalk {
+  position: relative;   /* nodig zodat het uitklapmenu eronder blijft hangen */
+  margin-bottom: 50px;  /* ruimte onder het knopje zodat het niet tegen de titel plakt */
+}
+
+/* het knopje met die 3 streepjes ☰ */
+.menubalk summary {
+  cursor: pointer;               /* handje als je er met je muis op staat */
+  display: inline-block;         /* knopje is zo breed als nodig, niet de hele regel */
+  font-size: 28px;               /* groot genoeg om op te klikken */
+  line-height: 1;
+  padding: 8px 14px;             /* ruimte binnen het knopje */
+  border: 2px solid #4d9fff;     /* blauw randje */
+  border-radius: 8px;            /* afgeronde hoekjes */
+  list-style: none;              /* haalt het standaard pijltje weg */
+}
+
+/* het standaard pijltje weghalen voor Chrome en dat soort browsers */
+.menubalk summary::-webkit-details-marker {
   display: none;
-  background-color: #333;
+}
+
+/* als het menu open is wordt het knopje felblauw */
+.menubalk[open] summary {
+  background-color: #1e4fd8;
+}
+
+/* de lijst met links die uitklapt */
+.menu {
+  position: absolute;            /* zweeft los over de rest heen */
+  top: 55px;                     /* 55px van boven = net onder het knopje */
+  left: 0;                       /* helemaal links */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;         /* geen bolletjes voor de lijst */
+  background-color: #121a2e;
+  border: 2px solid #4d9fff;
+  border-radius: 8px;
+  overflow: hidden;              /* zodat de hoekjes mooi rond blijven */
+  min-width: 190px;              /* minimaal zo breed, anders wordt het smal */
+  z-index: 10;                   /* ligt boven de andere dingen, anders verdwijnt het eronder */
+}
+
+/* elke link in het menu */
+.menu li a {
+  display: block;                /* hele balk is klikbaar, niet alleen de tekst */
   color: white;
-  font-size: 24px;
-  padding: 10px 16px;
-  cursor: pointer;
+  padding: 14px 20px;            /* eerst boven/onder, dan links/rechts */
+  text-decoration: none;         /* geen streepje onder de link */
+  transition: background-color 0.15s ease; /* kleur verandert soepel ipv ineens */
 }
 
-/* hoofdinhoud van de pagina: smal houden zodat het leesbaar blijft */
-.inhoud {
-  max-width: 800px;   /* breedte: nooit breder dan 800px */
-  margin: 0 auto;     /* in het midden van het scherm */
-  padding: 20px;
+/* als je er met je muis overheen gaat (hover) wordt het blauw */
+.menu li a:hover {
+  background-color: #1e4fd8;
 }
 
-h1 { color: #1a5fb4; }  /* selector h1: alle hoofdkoppen zijn blauw */
-h2, h3 { color: #333; } /* selector h2 en h3: donkergrijs */
+/* de pagina waar je nu op zit is altijd blauw */
+.menu li a.actief {
+  background-color: #1e4fd8;
+}
 
-/* afbeeldingen mogen nooit breder zijn dan de pagina */
-img { max-width: 100%; height: auto; }
-.rond { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; } /* object-fit: cover = foto wordt bijgesneden, niet uitgerekt */ /* hoogte en breedte van de foto op de homepage */
 
-/* knop: een link die eruitziet als een knop */
+/* ===== BOVENSTE DEEL: tekst links, foto rechts ===== */
+
+/* flex = dingen naast elkaar zetten ipv onder elkaar */
+.boven {
+  display: flex;
+}
+
+/* de tekstkant, 50% van de breedte */
+.links {
+  width: 50%;
+  padding: 20px 40px;            /* ruimte binnenin zodat de tekst niet tegen de rand zit */
+  box-sizing: border-box;        /* padding telt mee in de 50%, anders past het niet */
+}
+
+/* als er geen foto is mag de tekst de hele breedte (tot 700px) */
+.boven-zonder-foto .links {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* de grote titel */
+h1 {
+  font-size: 64px;               /* groot, het is de titel */
+  margin: 10px 0 10px 0;         /* boven, rechts, onder, links */
+}
+
+/* paragrafen in de tekstkant: iets groter en niet te breed */
+.links p {
+  font-size: 20px;
+  max-width: 420px;              /* anders worden de regels te lang om te lezen */
+}
+
+/* de knop ("Bekijk wat ik doe") */
 .knop {
   display: inline-block;
-  background-color: #1a5fb4;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #1e4fd8;
   color: white;
-  padding: 10px 18px;
-  text-decoration: none;
+  text-decoration: none;         /* geen streepje onder de tekst */
+  border-radius: 30px;           /* heel rond, dan lijkt het een echte knop */
+  transition: background-color 0.15s ease;
+}
+
+/* knop wordt lichter als je er overheen gaat */
+.knop:hover {
+  background-color: #4d9fff;
+}
+
+/* de fotokant, de andere 50% */
+.foto {
+  width: 50%;
+}
+
+/* de foto zelf */
+.foto img {
+  display: block;                /* haalt een vervelend gaatje onder de foto weg */
+  width: 100%;                   /* foto vult het hele vak */
+  height: 100%;
+  object-fit: cover;             /* foto wordt bijgesneden zodat hij past, niet uitgerekt */
+  border-bottom-left-radius: 200px; /* grote ronde hoek linksonder, voor de looks */
+}
+
+/* alleen voor de binaire stelsel pagina: hele afbeelding laten zien, niks afsnijden */
+.foto-binair img {
+  object-fit: contain;
+}
+
+
+/* ===== "WAT IK DOE" GEDEELTE ===== */
+
+/* het lichtere vak onder de bovenkant */
+.wat {
+  background-color: #121a2e;
+  padding: 60px 40px;            /* veel ruimte, dan ziet het er minder volgepropt uit */
+}
+
+/* kopjes van niveau 2 */
+h2 {
+  font-size: 36px;
+  margin: 0 0 5px 0;
+}
+
+/* de twee vakken naast elkaar (Informatica en Gamen) */
+.kolommen {
+  display: flex;                 /* naast elkaar */
+  gap: 30px;                     /* ruimte tussen de vakken */
+  margin-top: 35px;
+}
+
+/* eerste vak is 2x zo breed als het tweede (2 tegen 1) */
+.kolom1 {
+  flex: 2;
+}
+
+.kolom2 {
+  flex: 1;
+}
+
+/* opmaak die voor allebei de vakken hetzelfde is, daarom 1 keer opgeschreven met een komma */
+.kolom1, .kolom2 {
+  background-color: #182340;
+  padding: 25px 30px;
+  border-radius: 15px;
+  border-top: 4px solid #4d9fff; /* blauw streepje bovenaan, ziet er netjes uit */
+  transition: transform 0.15s ease;
+}
+
+/* vakje springt een beetje omhoog als je erop gaat staan */
+.kolom1:hover, .kolom2:hover {
+  transform: translateY(-4px);   /* 4px omhoog (min = omhoog, vreemd maar waar) */
+}
+
+/* kopjes van niveau 3 in de vakken */
+h3 {
+  color: #4d9fff;
+  margin-top: 0;                 /* anders zit er te veel ruimte boven */
+}
+
+
+/* ===== ONDERKANT ===== */
+
+/* het stukje helemaal onderaan de pagina */
+footer {
+  padding: 25px 40px;
+  color: #7f8fae;                /* grijs, mag niet te veel opvallen */
+  font-size: 14px;
+}
+
+
+/* ===== TABEL (binair stelsel pagina) ===== */
+
+table {
+  border-collapse: collapse;     /* randjes van de vakjes plakken aan elkaar ipv dubbele lijnen */
+  margin-top: 20px;
+}
+
+/* th = kop van een kolom, td = gewoon vakje. Allebei krijgen dit */
+th, td {
+  border: 1px solid #2a3a5c;     /* dun randje om elk vakje */
+  padding: 10px 16px;
+  text-align: center;            /* getallen in het midden */
+}
+
+/* de bovenste rij (128, 64, 32...) iets anders van kleur */
+th {
+  background-color: #182340;
+  color: #4d9fff;
+}
+
+/* de vakjes eronder (0 en 1) */
+td {
+  color: #b8c4dc;
+}
+
+
+/* ===== AFBEELDING OP DE KLEURMODELLEN PAGINA ===== */
+
+.kleurenfoto {
+  margin-top: 30px;
+  max-width: 480px;              /* niet te groot */
+}
+
+.kleurenfoto img {
+  width: 100%;                   /* past zich aan aan het vak waar hij in zit */
+  border-radius: 15px;           /* afgeronde hoekjes */
+}
+
+
+/* ===== TELEFOON ===== */
+
+/* alles hieronder werkt alleen als het scherm 700px of smaller is (dus telefoon) */
+@media (max-width: 700px) {
+  /* niks meer naast elkaar, alles gewoon onder elkaar */
+  .boven, .kolommen {
+    display: block;
+  }
+  /* tekst en foto nemen de hele breedte */
+  .links, .foto {
+    width: 100%;
+  }
+  /* foto niet te hoog op een telefoon */
+  .foto img {
+    height: 250px;
+  }
+  /* titel kleiner, anders past hij niet */
+  h1 {
+    font-size: 44px;
+  }
+  /* de ronde hoek van de foto ook kleiner */
+  .foto img {
+    border-bottom-left-radius: 80px;
+  }
+  /* beetje ruimte tussen de vakken die nu onder elkaar staan */
+  .kolom1, .kolom2 {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* ===== NIEUW: extra dingen voor de nieuwe pagina's (zelfde kleuren als de rest van de site) ===== */
+
+/* meerdere h2's in het lichte vak: wat ruimte ertussen, behalve bij de eerste */
+.wat h2 { margin-top: 45px; }
+.wat h2:first-child { margin-top: 0; }
+
+/* brede tabel mag zijwaarts scrollen op een telefoon, zodat de pagina niet breder wordt */
+.scroll { overflow-x: auto; }
+
+/* kleurvakje in de tabel en bij de kleurkiezer: breedte 60px, hoogte 24px */
+.vak {
+  width: 60px;
+  height: 24px;
+  margin: 0 auto;                /* in het midden van het vakje */
+  border: 1px solid #b8c4dc;
   border-radius: 6px;
 }
-.knop:hover { background-color: #124a8c; }
 
-/* tabellen met randjes */
-table { border-collapse: collapse; margin: 10px 0; }
-th, td { border: 1px solid #999; padding: 6px 10px; text-align: center; }
-th { background-color: #ddd; }
+/* invoervakjes: donker met blauw randje, past bij de rest */
+input {
+  width: 80px;
+  padding: 8px;
+  background-color: #0a0e1a;
+  color: white;                  /* tekstkleur in het vakje */
+  border: 2px solid #4d9fff;
+  border-radius: 8px;
+  font-size: 16px;
+}
 
-/* kleurvakje bij de RGB-tabel en de kleurkiezer */
-.vak { width: 60px; height: 30px; border: 1px solid #000; }
+/* een knop die een echte button is (ipv een link) */
+button.knop {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 0;
+}
 
-/* invoer - verwerking - uitvoer blokjes */
-.kader { background-color: white; border: 1px solid #999; padding: 12px; border-radius: 6px; }
-input { width: 70px; padding: 4px; }
+/* de uitkomst van een rekenhulp: groot en wit */
+.uitvoer {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
 
-/* voetregel onderaan */
-.voet { text-align: center; color: #666; padding: 20px; }
+/* afbeelding die een link naar een video is */
+.videolink img {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid #4d9fff;
+}
 
-/* TELEFOON: onder 600px breed staat het menu onder elkaar en achter de knop ☰ */
-@media (max-width: 600px) {
-  .hamburger { display: block; }
-  ul.menu { display: none; }
-  ul.menu.open { display: block; }
-  ul.menu li { float: none; }
+/* het spel Binary Bonanza (iframe): breedte 100% tot 700px, hoogte 500px */
+iframe.spel {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+  margin-top: 20px;
+  border: 2px solid #4d9fff;
+  border-radius: 15px;
 }
