@@ -1,65 +1,43 @@
-<!DOCTYPE html> <!-- dit is de homepage van mijn site -->
-<html lang="nl"> <!-- hier begint de pagina -->
-  <head>
-    <title>Mijn website</title>
-    <meta charset="utf-8">
-    <!-- zodat de pagina ook op een telefoon goed past -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- hier koppel ik het css-bestand aan deze pagina -->
-    <link rel="stylesheet" type="text/css" href="opmaak.css">
-  </head>
-  <body>
+<!DOCTYPE html> <!-- dit is een HTML5-pagina -->
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- zorgt dat de site goed past op een telefoon -->
+  <title>Mijn website</title> <!-- titel die in het tabblad staat -->
+  <link rel="stylesheet" type="text/css" href="opmaak.css"> <!-- koppelt de opmaak (CSS) aan deze pagina -->
+</head>
+<body>
+  <!-- MENU: knop voor op de telefoon; klikken laat het menu zien of verdwijnen -->
+  <div class="hamburger" onclick="document.getElementById('menu').classList.toggle('open')">☰</div>
+  <!-- MENU: een lijst (ul) met links (a). Dit blok staat op elke pagina -->
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="binairstelsel.html">Binair stelsel</a></li>
+    <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+    <li><a href="compressie.html">Compressie</a></li>
+    <li><a href="ai.html">AI</a></li>
+  </ul>
+  <div class="inhoud"> <!-- div = container voor de hele inhoud van de pagina -->
+    <h1>Welkom</h1> <!-- h1 = de grootste kop -->
+    <p>Dit is mijn eerste website. Kijk gerust even rond.</p> <!-- p = paragraaf -->
+    <p><a class="knop" href="#wat">Bekijk wat ik doe</a></p> <!-- knop die naar het stuk hieronder springt (anker #wat) -->
+    <img class="rond" src="foto.jpg" alt="Mijn eigen foto"> <!-- img = afbeelding, alt = tekst als de foto niet laadt -->
 
-    <!-- bovenste deel: links het menu en de tekst, rechts de foto -->
-    <div class="boven">
+    <h2 id="wat">Wat ik doe</h2> <!-- id="wat" is het doel van de knop hierboven -->
+    <p>Hier zijn een paar dingen die ik leuk vind.</p>
+    <h3>Informatica</h3> <!-- h3 = kleinere kop -->
+    <p>Ook al heb ik informatica pas een week, ik vind het nu al mijn favoriete vak. Ik snap er nog niet veel van, maar ik vind het leuk om hiermee bezig te zijn.</p>
+    <h3>Gamen</h3>
+    <p>Ik vind het erg leuk om met vrienden te gamen, vooral GTA 5 momenteel.</p>
 
-      <div class="links">
-        <!-- hamburgermenu: details/summary is een ingebouwd html-element, klik op summary om open of dicht te klappen -->
-        <details class="menubalk">
-          <summary>☰</summary>
-          <ul class="menu">
-            <li><a class="actief" href="index.html">Home</a></li>
-            <li><a href="binairstelsel.html">Binair stelsel</a></li>
-            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
-          </ul>
-        </details>
-
-        <h1>Welkom</h1>
-        <p>Dit is mijn eerste website. Kijk gerust even rond.</p>
-
-        <!-- deze link springt naar het stuk hieronder met id="wat" -->
-        <a class="knop" href="#wat">Bekijk wat ik doe</a>
-      </div>
-
-      <!-- upload zelf een foto met de naam foto.jpg -->
-      <div class="foto">
-        <img src="foto.jpg" alt="Mijn eigen foto">
-      </div>
-
-    </div>
-
-    <!-- onderste deel: wat ik doe -->
-    <div class="wat" id="wat">
-      <h2>Wat ik doe</h2>
-      <p>Hier zijn een paar dingen die ik leuk vind</p>
-
-      <!-- twee kaarten naast elkaar -->
-      <div class="kolommen">
-
-        <div class="kolom1">
-          <h3>Informatica</h3>
-          <p>Ook al heb ik informatica pas een week, ik vind het nu al mijn favoriete vak. Ik snap niks van dit, maar ik vind het leuk om hiermee bezig te zijn.</p>
-        </div>
-
-        <div class="kolom2">
-          <h3>Gamen</h3>
-          <p>Ik vind het erg leuk om met vrienden te gamen, vooral GTA 5 momenteel.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <footer>Mijn eerste website</footer>
-
-  </body>
+    <h2>Wat staat er op deze site?</h2>
+    <ul> <!-- gewone lijst met links naar de andere pagina's -->
+      <li><a href="binairstelsel.html">Binair stelsel</a>: hoe een computer rekent met 0 en 1</li>
+      <li><a href="kleurmodellen.html">Kleurmodellen</a>: RGB en CMYK</li>
+      <li><a href="compressie.html">Compressie</a>: bestanden kleiner maken</li>
+      <li><a href="ai.html">AI</a>: kunstmatige intelligentie</li>
+    </ul>
+  </div>
+  <div class="voet">Mijn eerste website</div> <!-- voetregel, op elke pagina hetzelfde -->
+</body>
 </html>
