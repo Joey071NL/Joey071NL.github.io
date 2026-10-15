@@ -295,39 +295,13 @@ td {
 /* brede tabel mag zijwaarts scrollen op een telefoon, zodat de pagina niet breder wordt */
 .scroll { overflow-x: auto; }
 
-/* kleurvakje in de tabel en bij de kleurkiezer: breedte 60px, hoogte 24px */
+/* kleurvakje in de kleurentabel: breedte 60px, hoogte 24px */
 .vak {
   width: 60px;
   height: 24px;
   margin: 0 auto;                /* in het midden van het vakje */
   border: 1px solid #b8c4dc;
   border-radius: 6px;
-}
-
-/* invoervakjes: donker met blauw randje, past bij de rest */
-input {
-  width: 80px;
-  padding: 8px;
-  background-color: #0a0e1a;
-  color: white;                  /* tekstkleur in het vakje */
-  border: 2px solid #4d9fff;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-/* een knop die een echte button is (ipv een link) */
-button.knop {
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 0;
-}
-
-/* de uitkomst van een rekenhulp: groot en wit */
-.uitvoer {
-  font-size: 28px;
-  color: white;
-  font-weight: bold;
 }
 
 /* afbeelding die een link naar een video is */
@@ -338,13 +312,16 @@ button.knop {
   border: 2px solid #4d9fff;
 }
 
-/* het spel Binary Bonanza (iframe): breedte 100% tot 700px, hoogte 500px */
+/* het spel Binary Bonanza (iframe): breedte max 700px, hoogte 500px, in het midden van het vak */
 iframe.spel {
   display: block;
   width: 100%;
   max-width: 700px;
   height: 500px;
-  margin-top: 20px;
+  margin: 0 auto;
   border: 2px solid #4d9fff;
   border-radius: 15px;
 }
+
+/* het vak met het spel mag niet omhoog springen als je erop gaat staan, dat is irritant tijdens het spelen */
+.spelkaart:hover { transform: none; }
