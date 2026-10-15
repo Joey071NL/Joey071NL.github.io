@@ -1,60 +1,115 @@
-<!DOCTYPE html> <!-- dit is een HTML5-pagina -->
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- zorgt dat de site goed past op een telefoon -->
-  <title>Binair stelsel</title> <!-- titel die in het tabblad staat -->
-  <link rel="stylesheet" type="text/css" href="opmaak.css"> <!-- koppelt de opmaak (CSS) aan deze pagina -->
-</head>
-<body>
-  <!-- MENU: knop voor op de telefoon; klikken laat het menu zien of verdwijnen -->
-  <div class="hamburger" onclick="document.getElementById('menu').classList.toggle('open')">☰</div>
-  <!-- MENU: een lijst (ul) met links (a). Dit blok staat op elke pagina -->
-  <ul class="menu" id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="binairstelsel.html">Binair stelsel</a></li>
-    <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
-    <li><a href="compressie.html">Compressie</a></li>
-    <li><a href="ai.html">AI</a></li>
-  </ul>
-  <div class="inhoud">
-    <h1>Binair stelsel</h1>
-    <p>Een computer rekent met maar twee cijfers: 0 en 1. Een 1 of 0 heet een <b>bit</b> (een magneetje op de harde schijf dat aan of uit staat). 8 bits zijn samen 1 <b>byte</b>, dus 2<sup>8</sup> = 256 verschillende waardes. Elke plek in het getal heeft een eigen waarde:</p>
-    <img src="binear.jpg" alt="Binair rekenen" width="300"> <!-- mijn eigen afbeelding bij binair rekenen -->
+<!DOCTYPE html> <!-- dit is de pagina over het binaire stelsel -->
+<html lang="nl"> <!-- hier begint de pagina -->
+  <head>
+    <title>Binair stelsel</title>
+    <meta charset="utf-8">
+    <!-- zodat de pagina ook op een telefoon goed past -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- hier koppel ik het css-bestand aan deze pagina -->
+    <link rel="stylesheet" type="text/css" href="opmaak.css">
+  </head>
+  <body>
 
-    <!-- tabel met de waardes van elke plek (machten van 2) -->
-    <table>
-      <tr><th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr>
-      <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-    </table>
-    <p>8 + 4 + 1 = 13, dus 0000 1101 is het getal 13. Binaire getallen schrijf je altijd in groepjes van 4.</p>
+    <!-- bovenste deel van de pagina: links de tekst, rechts de afbeelding (net als op de homepage) -->
+    <div class="boven">
 
-    <h2>Probeer het zelf (invoer, verwerking, uitvoer)</h2>
-    <div class="kader">
-      <!-- INVOER: de gebruiker typt een getal van 0 t/m 255 -->
-      Getal (0 t/m 255): <input type="number" id="getal" min="0" max="255" value="13">
-      <button onclick="naarBinair()">Omzetten</button>
-      <!-- UITVOER: hier komt het antwoord te staan -->
-      <p>Binair: <b id="antwoord">0000 1101</b></p>
+      <!-- linkerkant: menu, titel, uitleg en tabel -->
+      <div class="links">
+        <!-- hamburgermenu: details/summary is een ingebouwd html-element, klik op summary om open of dicht te klappen -->
+        <details class="menubalk">
+          <summary>☰</summary>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="actief" href="binairstelsel.html">Binair stelsel</a></li>
+            <li><a href="kleurmodellen.html">Kleurmodellen</a></li>
+            <li><a href="compressie.html">Compressie</a></li>
+            <li><a href="ai.html">AI</a></li>
+          </ul>
+        </details>
+
+        <h1>Binair stelsel</h1>
+        <p>Een computer rekent met maar twee cijfers: 0 en 1. Elke plek in het getal heeft een eigen waarde.</p>
+
+        <table>
+          <tr>
+            <th>128</th>
+            <th>64</th>
+            <th>32</th>
+            <th>16</th>
+            <th>8</th>
+            <th>4</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+        </table>
+
+        <p>8 + 4 + 1 = 13, dus 00001101 is het getal 13.</p>
+      </div>
+
+      <!-- rechterkant: de afbeelding, de klasse foto geeft de opmaak uit opmaak.css -->
+      <!-- foto-binair zorgt dat de hele afbeelding zichtbaar blijft (niet bijgesneden), alleen op deze pagina -->
+      <!-- src is de bestandsnaam in mijn repository, alt is de tekst als de afbeelding niet laadt -->
+      <div class="foto foto-binair">
+        <img src="binear.png" alt="Uitleg over het binaire stelsel">
+      </div>
+
     </div>
+
+    <!-- onderste deel: bits en bytes, zelf proberen en het spel -->
+    <div class="wat">
+      <h2>Bits en bytes</h2>
+      <p>Op een harde schijf staan miljoenen magneetjes die aan of uit staan.</p>
+
+      <div class="kolommen">
+
+        <div class="kolom1">
+          <h3>Bit en byte</h3>
+          <p>1 bit is 1 magneetje: aan (1) of uit (0). 8 bits samen zijn 1 byte. Met 8 bits kun je 2<sup>8</sup> = 256 verschillende waardes opslaan. Binaire getallen schrijf je altijd in groepjes van 4, dus 0000 1101.</p>
+        </div>
+
+        <!-- INVOER - VERWERKING - UITVOER: ik typ een getal, de computer rekent het om, het antwoord komt eronder -->
+        <div class="kolom2">
+          <h3>Probeer het zelf</h3>
+          <!-- INVOER: een getal van 0 t/m 255 -->
+          <input type="number" id="getal" min="0" max="255" value="13">
+          <button class="knop" onclick="naarBinair()">Omzetten</button>
+          <!-- UITVOER: hier komt het antwoord -->
+          <p class="uitvoer" id="antwoord">0000 1101</p>
+        </div>
+
+      </div>
+
+      <h2>Binary Bonanza</h2>
+      <p>Ik heb een paar levels van dit spel gespeeld om binair te oefenen. Speel zelf mee:</p>
+      <!-- iframe = een andere pagina (het spel) die in mijn pagina getoond wordt -->
+      <iframe class="spel" src="https://games.penjee.com/binary-bonanza/game.php" title="Binary Bonanza"></iframe>
+    </div>
+
     <script>
       // VERWERKING: zet het ingevoerde getal om naar binair
       function naarBinair() {
-        var n = parseInt(document.getElementById("getal").value); // haal het getal op
-        if (isNaN(n) || n < 0 || n > 255) {                       // controle op foute invoer
-          document.getElementById("antwoord").innerText = "Kies een getal van 0 t/m 255";
+        var n = parseInt(document.getElementById("getal").value);   // haal het getal uit het vakje
+        var uit = document.getElementById("antwoord");
+        if (isNaN(n) || n < 0 || n > 255) {                         // controle: moet tussen 0 en 255 zijn
+          uit.innerText = "Kies 0 t/m 255";
           return;
         }
-        var b = n.toString(2).padStart(8, "0");                   // naar binair, aanvullen tot 8 bits
-        document.getElementById("antwoord").innerText = b.slice(0, 4) + " " + b.slice(4); // groepjes van 4
+        var bits = n.toString(2).padStart(8, "0");                  // binair, aangevuld tot 8 bits
+        uit.innerText = bits.slice(0, 4) + " " + bits.slice(4);     // groepjes van 4
       }
     </script>
 
-    <h2>Binary Bonanza</h2>
-    <p>Ik heb een paar levels van dit spel gespeeld om binair te oefenen. Speel hieronder zelf mee:</p>
-    <!-- iframe = een andere webpagina (het spel) ingebed in mijn pagina -->
-    <iframe src="https://games.penjee.com/binary-bonanza/game.php" width="100%" height="500" title="Binary Bonanza spel"></iframe>
-  </div>
-  <div class="voet">Mijn eerste website</div> <!-- voetregel, op elke pagina hetzelfde -->
-</body>
+    <footer>Mijn eerste website</footer>
+
+  </body>
 </html>
