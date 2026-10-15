@@ -39,58 +39,60 @@
 
     </div>
 
-    <!-- onderste deel: RGB in cijfers, kleur in mijn code, CMY en zelf proberen -->
+    <!-- onderste deel: RGB in cijfers, kleur in mijn code, CMY en de video -->
     <div class="wat">
-      <h2>RGB in decimaal en hexadecimaal</h2>
-      <p>Elk pixel heeft 3 lampjes: rood, groen en blauw. Hoe fel elk lampje brandt is een getal van 0 t/m 255 (1 byte). Hexadecimaal heeft 16 cijfers (0 t/m 9 en A t/m F), dus 255 wordt FF.</p>
+      <h2>Kleur in cijfers</h2>
+      <p>Elk pixel heeft 3 lampjes: rood, groen en blauw. Hoe fel elk lampje brandt is een getal van 0 t/m 255 (1 byte).</p>
 
-      <!-- de kleur van elk vakje staat in de style van het vakje, met dezelfde hexcode als in de laatste kolom -->
-      <div class="scroll">
-        <table>
-          <tr><th>Kleur</th><th>Vakje</th><th>RGB (decimaal)</th><th>Hexadecimaal</th></tr>
-            <tr><td>Rood</td><td><div class="vak" style="background-color: #FF0000;"></div></td><td>255, 0, 0</td><td>#FF0000</td></tr>
-            <tr><td>Groen</td><td><div class="vak" style="background-color: #00FF00;"></div></td><td>0, 255, 0</td><td>#00FF00</td></tr>
-            <tr><td>Blauw</td><td><div class="vak" style="background-color: #0000FF;"></div></td><td>0, 0, 255</td><td>#0000FF</td></tr>
-            <tr><td>Geel</td><td><div class="vak" style="background-color: #FFFF00;"></div></td><td>255, 255, 0</td><td>#FFFF00</td></tr>
-            <tr><td>Oranje</td><td><div class="vak" style="background-color: #FF6600;"></div></td><td>255, 102, 0</td><td>#FF6600</td></tr>
-            <tr><td>Wit</td><td><div class="vak" style="background-color: #FFFFFF;"></div></td><td>255, 255, 255</td><td>#FFFFFF</td></tr>
-            <tr><td>Zwart</td><td><div class="vak" style="background-color: #000000;"></div></td><td>0, 0, 0</td><td>#000000</td></tr>
-            <tr><td>Achtergrond van mijn site</td><td><div class="vak" style="background-color: #0a0e1a;"></div></td><td>10, 14, 26</td><td>#0a0e1a</td></tr>
-            <tr><td>Knoppen en menu van mijn site</td><td><div class="vak" style="background-color: #1e4fd8;"></div></td><td>30, 79, 216</td><td>#1e4fd8</td></tr>
-            <tr><td>Links en kopjes van mijn site</td><td><div class="vak" style="background-color: #4d9fff;"></div></td><td>77, 159, 255</td><td>#4d9fff</td></tr>
-        </table>
-      </div>
+      <div class="kolommen">
 
-      <h2>Zo staat kleur in mijn code</h2>
-      <!-- UITLEG KLEUR: in opmaak.css zet ik een kleur met een hexcode, bijvoorbeeld background-color: #0a0e1a;
-           het # betekent hexadecimaal. Daarna komen 3 stukjes van 2 tekens: rood (0a = 10), groen (0e = 14), blauw (1a = 26).
-           Dat is dus RGB(10, 14, 26): bijna zwart met een beetje blauw. Zo werkt elke kleur in mijn css. -->
-      <p>In <b>opmaak.css</b> zet ik een kleur met een hexcode, bijvoorbeeld <b>background-color: #0a0e1a;</b>. Het # betekent hexadecimaal. Daarna komen rood (0a = 10), groen (0e = 14) en blauw (1a = 26). Dat is RGB(10, 14, 26): donkerblauw. In de tabel hierboven zie je de kleuren van mijn eigen site.</p>
+        <div class="kolom1">
+          <h3>RGB in decimaal en hexadecimaal</h3>
+          <p>Hexadecimaal heeft 16 cijfers (0 t/m 9 en A t/m F), dus 255 wordt FF.</p>
+          <!-- de kleur van elk vakje staat in de style van het vakje, met dezelfde hexcode als in de laatste kolom -->
+          <div class="scroll">
+            <table>
+              <tr><th>Kleur</th><th>Vakje</th><th>RGB (decimaal)</th><th>Hexadecimaal</th></tr>
+              <tr><td>Rood</td><td><div class="vak" style="background-color: #FF0000;"></div></td><td>255, 0, 0</td><td>#FF0000</td></tr>
+              <tr><td>Groen</td><td><div class="vak" style="background-color: #00FF00;"></div></td><td>0, 255, 0</td><td>#00FF00</td></tr>
+              <tr><td>Blauw</td><td><div class="vak" style="background-color: #0000FF;"></div></td><td>0, 0, 255</td><td>#0000FF</td></tr>
+              <tr><td>Geel</td><td><div class="vak" style="background-color: #FFFF00;"></div></td><td>255, 255, 0</td><td>#FFFF00</td></tr>
+              <tr><td>Oranje</td><td><div class="vak" style="background-color: #FF6600;"></div></td><td>255, 102, 0</td><td>#FF6600</td></tr>
+              <tr><td>Wit</td><td><div class="vak" style="background-color: #FFFFFF;"></div></td><td>255, 255, 255</td><td>#FFFFFF</td></tr>
+              <tr><td>Zwart</td><td><div class="vak" style="background-color: #000000;"></div></td><td>0, 0, 0</td><td>#000000</td></tr>
+              <tr><td>Achtergrond van mijn site</td><td><div class="vak" style="background-color: #0a0e1a;"></div></td><td>10, 14, 26</td><td>#0a0e1a</td></tr>
+              <tr><td>Knoppen en menu van mijn site</td><td><div class="vak" style="background-color: #1e4fd8;"></div></td><td>30, 79, 216</td><td>#1e4fd8</td></tr>
+              <tr><td>Links en kopjes van mijn site</td><td><div class="vak" style="background-color: #4d9fff;"></div></td><td>77, 159, 255</td><td>#4d9fff</td></tr>
+            </table>
+          </div>
+        </div>
 
-      <h2>Van RGB naar CMY</h2>
-      <p>Een printer rekent met: CMY = (255 - R, 255 - G, 255 - B).</p>
-      <div class="scroll">
-        <table>
-          <tr><th>Kleur</th><th>RGB</th><th>CMY</th></tr>
-          <tr><td>Rood</td><td>255, 0, 0</td><td>0, 255, 255</td></tr>
-          <tr><td>Blauw</td><td>0, 0, 255</td><td>255, 255, 0</td></tr>
-          <tr><td>Oranje</td><td>255, 128, 0</td><td>0, 127, 255</td></tr>
-          <tr><td>Magenta</td><td>255, 0, 255</td><td>0, 255, 0</td></tr>
-          <tr><td>Grijs</td><td>128, 128, 128</td><td>127, 127, 127</td></tr>
-        </table>
+        <!-- UITLEG KLEUR: in opmaak.css zet ik een kleur met een hexcode, bijvoorbeeld background-color: #0a0e1a;
+             het # betekent hexadecimaal. Daarna komen 3 stukjes van 2 tekens: rood (0a = 10), groen (0e = 14), blauw (1a = 26).
+             Dat is dus RGB(10, 14, 26): bijna zwart met een beetje blauw. Zo werkt elke kleur in mijn css. -->
+        <div class="kolom2">
+          <h3>Zo staat kleur in mijn code</h3>
+          <p>In <b>opmaak.css</b> zet ik een kleur met een hexcode, bijvoorbeeld <b>background-color: #0a0e1a;</b>. Het # betekent hexadecimaal. Daarna komen rood (0a = 10), groen (0e = 14) en blauw (1a = 26). Dat is RGB(10, 14, 26): donkerblauw.</p>
+          <p>De laatste drie kleuren in de tabel zijn de kleuren van mijn eigen site.</p>
+        </div>
+
       </div>
 
       <div class="kolommen">
 
-        <!-- INVOER - VERWERKING - UITVOER: ik typ 3 getallen, de computer maakt er een hexcode en kleur van -->
         <div class="kolom1">
-          <h3>Maak zelf een kleur</h3>
-          R <input type="number" id="r" min="0" max="255" value="255">
-          G <input type="number" id="g" min="0" max="255" value="102">
-          B <input type="number" id="b" min="0" max="255" value="0">
-          <button class="knop" onclick="maakKleur()">Toon kleur</button>
-          <div class="vak" id="kleurvak" style="background-color: #FF6600; margin: 20px 0 0 0; width: 120px; height: 50px;"></div>
-          <p class="uitvoer" id="hex">#FF6600</p>
+          <h3>Van RGB naar CMY</h3>
+          <p>Een printer rekent met: CMY = (255 - R, 255 - G, 255 - B).</p>
+          <div class="scroll">
+            <table>
+              <tr><th>Kleur</th><th>RGB</th><th>CMY</th></tr>
+              <tr><td>Rood</td><td>255, 0, 0</td><td>0, 255, 255</td></tr>
+              <tr><td>Blauw</td><td>0, 0, 255</td><td>255, 255, 0</td></tr>
+              <tr><td>Oranje</td><td>255, 128, 0</td><td>0, 127, 255</td></tr>
+              <tr><td>Magenta</td><td>255, 0, 255</td><td>0, 255, 0</td></tr>
+              <tr><td>Grijs</td><td>128, 128, 128</td><td>127, 127, 127</td></tr>
+            </table>
+          </div>
         </div>
 
         <!-- de afbeelding is een link naar de video (embedden in een afbeelding) -->
@@ -102,21 +104,6 @@
 
       </div>
     </div>
-
-    <script>
-      // VERWERKING: zet de 3 getallen om naar een hexcode en kleur het vakje
-      function maakKleur() {
-        var ids = ["r", "g", "b"];
-        var hex = "#";
-        for (var i = 0; i < 3; i++) {
-          var n = parseInt(document.getElementById(ids[i]).value) || 0;   // leeg vakje wordt 0
-          n = Math.max(0, Math.min(255, n));                              // blijf tussen 0 en 255
-          hex += n.toString(16).toUpperCase().padStart(2, "0");           // naar hexadecimaal, altijd 2 tekens
-        }
-        document.getElementById("kleurvak").style.backgroundColor = hex;  // UITVOER: kleur
-        document.getElementById("hex").innerText = hex;                   // UITVOER: hexcode
-      }
-    </script>
 
     <footer>Mijn eerste website</footer>
 
