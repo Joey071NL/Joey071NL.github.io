@@ -1,3 +1,9 @@
+/* UITLEG SELECTORS: een selector zegt op welk deel van de pagina de opmaak werkt.
+   h1 {...}            = elementnaam: werkt op alle h1's
+   .boven {...}        = punt: een klasse, werkt op elk element met class="boven"
+   ul.menu li a {...}  = met spaties: alleen een a (link) in een li in een ul met class menu
+   a:hover {...}       = :hover, werkt alleen als de muis erop staat */
+
 /* ===== ALGEMEEN: dingen die voor de hele site gelden ===== */
 
 /* body = de hele pagina. Donkerblauwe achtergrond, witte tekst, klaar */
@@ -181,7 +187,7 @@ h2 {
   flex: 2;
 }
 
-.kolom2 {
+.kolom2 { /* selector met punt = klasse: dit is de rechterkaart (smaller dan kolom1) */
   flex: 1;
 }
 
@@ -249,7 +255,7 @@ td {
   max-width: 480px;              /* niet te groot */
 }
 
-.kleurenfoto img {
+.kleurenfoto img { /* selector met spatie: alleen de img (foto) BINNEN het vak kleurenfoto */
   width: 100%;                   /* past zich aan aan het vak waar hij in zit */
   border-radius: 15px;           /* afgeronde hoekjes */
 }
